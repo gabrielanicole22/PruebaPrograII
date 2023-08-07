@@ -14,6 +14,9 @@ private static final String PLAYSTATION = "PLAYSTATION";
         
     }
     
+    public double pagarRenta(int dias){
+        return super.pagoRenta(dias);
+    }
     
     public String toString() {
         return super.toString()+ consola + " Game";
