@@ -3,9 +3,10 @@ package prueba1_programacionii;
 public class AgregarItem extends javax.swing.JFrame {
 
     
-    BlockBusterItem llamar;
-    public AgregarItem() {
+    BlockBuster blockB;
+    public AgregarItem(BlockBuster blockB) {
         initComponents();
+        this.blockB=blockB;
     }
 
     @SuppressWarnings("unchecked")
