@@ -19,6 +19,22 @@ public class BlockBusterItem {
         this.fechaAdicion = LocalDate.now();
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecioRenta() {
+        return precioRenta;
+    }
+
+    public LocalDate getFechaAdicion() {
+        return fechaAdicion;
+    }
+
     @Override
     public String toString() {
         return "Código: " + codigo + ", Nombre: " + nombre + ", Precio de Renta: " + precioRenta;

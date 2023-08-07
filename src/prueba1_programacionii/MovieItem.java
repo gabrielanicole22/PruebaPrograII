@@ -10,7 +10,7 @@ import java.time.LocalDate;
  *
  * @author Gabriela Mejía
  */
-class MovieItem extends BlockBusterItem {
+public class MovieItem extends BlockBusterItem {
     private String estado;
 
     public MovieItem(int codigo, String nombre, double precioRenta) {
@@ -40,4 +40,4 @@ class MovieItem extends BlockBusterItem {
             estado = "NORMAL";
         }
     }
-} 
+}
