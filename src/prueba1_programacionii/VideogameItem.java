@@ -15,9 +15,8 @@ private static final String PLAYSTATION = "PLAYSTATION";
     }
     
     
-    
     public String toString() {
-        return consola + " Game";
+        return super.toString()+ consola + " Game";
     }
     
     
