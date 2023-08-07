@@ -6,11 +6,6 @@ package prueba1_programacionii;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author Gabriela Mejía
- */
-
 public class BlockBusterItem {
     private int codigo;
     private String nombre;
