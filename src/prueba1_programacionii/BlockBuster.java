@@ -49,14 +49,16 @@ public class BlockBuster {
         }
     }
 
-    public void rentar(int codigo, String tipoItem, int dias) {
+    public String rentar(int codigo, String tipoItem, int dias) {
         BlockBusterItem item = buscarItem(codigo, tipoItem);
         if (item != null) {
             System.out.println(item);
             double montoPagar = item.pagoRenta(dias);
-            System.out.println("Monto a pagar: " + montoPagar);
+            String monto="Monto a pagar: " + montoPagar;
+            return monto;
         } else {
-            System.out.println("Ítem no existe.");
+            String no="No existe este item";
+            return no;
         }
     }
 
