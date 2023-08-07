@@ -60,11 +60,13 @@ public class BlockBuster {
         }
     }
 
-    public void auditarMovieEstados() {
+    public String auditarMovieEstados() {
+        String informacion=("\t\tINFORMACIÓN\n\n");
         for (BlockBusterItem item : items) {
             if (item instanceof MovieItem) {
                 ((MovieItem) item).evaluarEstado();
             }
         }
+        return informacion;
     }
 }

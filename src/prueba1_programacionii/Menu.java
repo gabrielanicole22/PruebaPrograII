@@ -78,8 +78,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAuditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuditarActionPerformed
         // TODO add your handling code here:
-        AuditarEstado pagarMultaForm = new AuditarEstado(blockB);
-        pagarMultaForm.setVisible(true);
+        AuditarEstado auditar = new AuditarEstado(blockB);
+        auditar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAuditarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -91,8 +92,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnRentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentarActionPerformed
         // TODO add your handling code here:
-        Rentar rentar = new Rentar(blockB);
-        rentar.setVisible(true);
+        Rentar renta = new Rentar(blockB);
+        renta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRentarActionPerformed
 
     /**
