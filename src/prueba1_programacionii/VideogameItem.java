@@ -8,9 +8,10 @@ private static final String PLAYSTATION = "PLAYSTATION";
 
     private String consola;
     
-    public VideogameItem(int codigo, String nombre, double precioRenta) {
+    public VideogameItem(int codigo, String nombre, double precioRenta,String consola) {
         
         super(codigo,nombre,precioRenta);
+        this.consola=consola;
         
     }
     
