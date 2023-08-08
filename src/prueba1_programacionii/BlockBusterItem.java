@@ -7,9 +7,10 @@ package prueba1_programacionii;
 import java.time.LocalDate;
 
 public class BlockBusterItem {
+
     private int codigo;
     private String nombre;
-    private double precioRenta;
+    public double precioRenta;
     public LocalDate fechaAdicion;
 
     public BlockBusterItem(int codigo, String nombre, double precioRenta) {

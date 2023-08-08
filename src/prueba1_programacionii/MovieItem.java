@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author Gabriela Mejía
  */
 public class MovieItem extends BlockBusterItem {
+
     private String estado;
 
     public MovieItem(int codigo, String nombre, double precioRenta) {
@@ -33,11 +34,12 @@ public class MovieItem extends BlockBusterItem {
             return super.pagoRenta(dias);
         }
     }
-    
-    public void evaluarEstado() {
+
+    public String evaluarEstado() {
         LocalDate currentDate = LocalDate.now();
         if (currentDate.isAfter(fechaAdicion.plusMonths(5))) {
             estado = "NORMAL";
         }
+        return estado;
     }
 }

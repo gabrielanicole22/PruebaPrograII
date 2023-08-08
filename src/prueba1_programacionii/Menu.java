@@ -6,18 +6,17 @@ package prueba1_programacionii;
 
 /**
  *
- * @author User
+ * @author Gabriela Mejia
  */
 public class Menu extends javax.swing.JFrame {
 
     BlockBuster blockB;
-    
+
     public Menu() {
         initComponents();
-            BlockBuster blockB = new BlockBuster();
+        blockB = new BlockBuster();
     }
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -25,6 +24,8 @@ public class Menu extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnRentar = new javax.swing.JButton();
         btnAuditar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnSali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +50,20 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnSali.setText("Salir");
+        btnSali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaliActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -56,6 +71,8 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(186, 186, 186)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSali)
+                    .addComponent(btnBuscar)
                     .addComponent(btnAuditar)
                     .addComponent(btnRentar)
                     .addComponent(btnAgregar))
@@ -64,38 +81,51 @@ public class Menu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addGap(86, 86, 86)
+                .addComponent(btnBuscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAgregar)
                 .addGap(18, 18, 18)
                 .addComponent(btnRentar)
                 .addGap(18, 18, 18)
                 .addComponent(btnAuditar)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSali)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAuditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuditarActionPerformed
         // TODO add your handling code here:
-        AuditarEstado auditar = new AuditarEstado(blockB);
+        AuditarEstado auditar = new AuditarEstado(blockB, this);
         auditar.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnAuditarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-        AgregarItem agregar = new AgregarItem(blockB);
+        AgregarItem agregar = new AgregarItem(blockB, this);
         agregar.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnRentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentarActionPerformed
         // TODO add your handling code here:
-        Rentar renta = new Rentar(blockB);
+        Rentar renta = new Rentar(blockB, this);
         renta.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnRentarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        BuscarItem buscar = new BuscarItem(blockB, this);
+        buscar.setVisible(true);
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnSaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaliActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSaliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +165,8 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAuditar;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnRentar;
+    private javax.swing.JButton btnSali;
     // End of variables declaration//GEN-END:variables
 }

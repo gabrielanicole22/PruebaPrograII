@@ -5,14 +5,14 @@
 package prueba1_programacionii;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Gabriela Mejía
  */
-
 public class BlockBuster {
+
     private ArrayList<BlockBusterItem> items;
 
     public BlockBuster() {
@@ -30,40 +30,43 @@ public class BlockBuster {
         return null;
     }
 
-    public void agregarItem(int codigo, String nombre, String tipoItem) {
+    public void agregarItem(int codigo, String nombre, double precioRenta, String tipoItem) {
         if (buscarItem(codigo, tipoItem) == null) {
-            Scanner scanner = new Scanner(System.in);
             if (tipoItem.equals("MOVIE")) {
-                System.out.print("Ingrese el precio de renta: ");
-                double precio = scanner.nextDouble();
-                MovieItem movieItem = new MovieItem(codigo, nombre, precio);
+                //double precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio de renta: "));
+                MovieItem movieItem = new MovieItem(codigo, nombre, precioRenta);
                 items.add(movieItem);
             } else if (tipoItem.equals("GAME")) {
-                System.out.print("Ingrese la consola (PLAYSTATION, XBOX, o WII): ");
-                String consola = scanner.next();
-                VideogameItem videoGameItem = new VideogameItem(codigo, nombre, consola);
+                String consola = JOptionPane.showInputDialog("Ingrese la consola (PLAYSTATION, XBOX, o WII): ");
+                VideogameItem videoGameItem = new VideogameItem(codigo, nombre, precioRenta, consola);
                 items.add(videoGameItem);
             }
         } else {
-            System.out.println("Ya existe un ítem con ese código y ese tipo.");
+            JOptionPane.showMessageDialog(null, "Ya existe un ítem con ese código y ese tipo.");
         }
     }
 
-    public String rentar(int codigo, String tipoItem, int dias) {
+    public double obtenerMontoAPagar(int codigo, String tipoItem, int dias) {
+        BlockBusterItem item = buscarItem(codigo, tipoItem);
+        if (item != null) {
+            return item.pagoRenta(dias);
+        }
+        return 0;
+    }
+
+    public void rentar(int codigo, String tipoItem, int dias) {
         BlockBusterItem item = buscarItem(codigo, tipoItem);
         if (item != null) {
             System.out.println(item);
             double montoPagar = item.pagoRenta(dias);
-            String monto="Monto a pagar: " + montoPagar;
-            return monto;
+            System.out.println("Monto a pagar: " + montoPagar);
         } else {
-            String no="No existe este item";
-            return no;
+            System.out.println("Ítem no existe.");
         }
     }
 
     public String auditarMovieEstados() {
-        String informacion=("\t\tINFORMACIÓN\n\n");
+        String informacion = ("\t\tINFORMACIÓN\n\n");
         for (BlockBusterItem item : items) {
             if (item instanceof MovieItem) {
                 ((MovieItem) item).evaluarEstado();
